@@ -4,7 +4,6 @@ import SceneInit from "./lib/SceneInit";
 import Planet from "./lib/Planet";
 import Rotation from "./lib/Rotation";
 
-
 export default function Home() {
 
   let gui: any;
