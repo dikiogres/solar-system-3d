@@ -55,4 +55,16 @@ export default class SceneInit {
         window.addEventListener("resize", () => this.onWindowResize(), false);
     }
 
+    animate() {
+        // requestAnimationFrame(this.animate.bind(this));
+        window.requestAnimationFrame(this.animate.bind(this));
+        this.render();
+        this.stats.update();
+        // this.controls.update();
+    }
+
+    render() {
+        this.renderer.render(this.scene, this.camera);
+    }
+
 }
