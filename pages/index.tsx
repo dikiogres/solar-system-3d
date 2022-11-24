@@ -28,6 +28,13 @@ export default function Home() {
     const solarSystem = new THREE.Group();
     solarSystem.add(sunMesh);
     test.scene.add(solarSystem);
+
+    const mercury = new Planet(2, 16, "mercury.png");
+    const mercuryMesh = mercury.getMesh();
+    let mercurySystem = new THREE.Group();
+    mercurySystem.add(mercuryMesh);
+
+
   }, []);  
 
   return (
