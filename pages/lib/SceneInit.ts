@@ -11,9 +11,6 @@ export default class SceneInit {
     public controls: any;
     public renderer:any = new THREE.WebGLRenderer;
 
-    onWindowResize: any;
-
-
     constructor(fov = 36, camera:any, scene:any, stats:number, controls:string, renderer:any) {
         this.fov = fov;
         this.scene = scene;
@@ -65,6 +62,12 @@ export default class SceneInit {
 
     render() {
         this.renderer.render(this.scene, this.camera);
+    }
+
+    onWindowResize() {
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
 }
