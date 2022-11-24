@@ -7,8 +7,8 @@ export default class SceneInit {
     public fov: number;
     public camera:any = new THREE.PerspectiveCamera;
     public scene:any = new THREE.Scene;
-    public stats: number;
-    public controls: string;
+    public stats: any;
+    public controls: any;
     public renderer:any = new THREE.WebGLRenderer;
 
 
@@ -40,9 +40,15 @@ export default class SceneInit {
             canvas: document.getElementById("myThreeJsCanvas") as HTMLInputElement,
             antialias: true,
         });
-    
+
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(this.renderer.domElement);
+    
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    
+        this.stats = Stats();
+        document.body.appendChild(this.stats.dom);
+
     }
 
 }
