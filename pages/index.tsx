@@ -51,7 +51,18 @@ export default function Home() {
 
     solarSystem.add(mercurySystem, venusSystem, earthSystem, marsSystem);
 
-
+    const mercuryRotation = new Rotation(mercuryMesh);
+    const mercuryRotationMesh = mercuryRotation.getMesh();
+    mercurySystem.add(mercuryRotationMesh);
+    const venusRotation = new Rotation(venusMesh);
+    const venusRotationMesh = venusRotation.getMesh();
+    venusSystem.add(venusRotationMesh);
+    const earthRotation = new Rotation(earthMesh);
+    const earthRotationMesh = earthRotation.getMesh();
+    earthSystem.add(earthRotationMesh);
+    const marsRotation = new Rotation(marsMesh);
+    const marsRotationMesh = marsRotation.getMesh();
+    marsSystem.add(marsRotationMesh);
 
   }, []);  
 
