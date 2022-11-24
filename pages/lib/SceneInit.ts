@@ -5,11 +5,11 @@ import Stats from "three/examples/jsm/libs/stats.module";
 export default class SceneInit {
     
     fov: number;
-    camera = new THREE.PerspectiveCamera;
-    scene = new THREE.Scene;
+    camera:any = new THREE.PerspectiveCamera;
+    scene:any = new THREE.Scene;
     stats: number;
     controls: string;
-    renderer = new THREE.WebGLRenderer;
+    renderer:any = new THREE.WebGLRenderer;
 
 
     constructor(fov = 36, camera:any, scene:any, stats:number, controls:string, renderer:any) {
@@ -19,5 +19,18 @@ export default class SceneInit {
         this.camera = camera;
         this.controls = controls;
         this.renderer = renderer;
-      }
+    }
+
+    initScene() {
+        this.camera = new THREE.PerspectiveCamera(
+            this.fov,
+            window.innerWidth / window.innerHeight,
+            1,
+            1000
+        );
+        this.camera.position.z = 128;
+        this.scene = new THREE.Scene();
+    }
+
+    
 }
