@@ -71,9 +71,20 @@ export default function Home() {
         solarSystemGui.add(venusRotationMesh, "visible").name("venus").listen();
         solarSystemGui.add(earthRotationMesh, "visible").name("earth").listen();
         solarSystemGui.add(marsRotationMesh, "visible").name("mars").listen();
+
+        const EARTH_YEAR = 2 * Math.PI * (1 / 60) * (1 / 60);
+        const animate = () => {
+          sunMesh.rotation.y += 0.001;
+          mercurySystem.rotation.y += EARTH_YEAR * 4;
+          venusSystem.rotation.y += EARTH_YEAR * 2;
+          earthSystem.rotation.y += EARTH_YEAR;
+          marsSystem.rotation.y += EARTH_YEAR * 0.5;
+          requestAnimationFrame(animate);
+        }
+        animate();
       }
-    )
-  }, []);  
+    );
+  });  
 
   return (
     <div className="flex flex-col items-center justify-center">
