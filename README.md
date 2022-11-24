@@ -31,3 +31,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
+--DEMO
+![](https://github.com/dikiogres/solar-system-3d/blob/main/_demo/solarSystem%20.gif)
+
