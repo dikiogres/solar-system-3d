@@ -8,6 +8,7 @@ export default class Rotation {
     y: number;
     z: number;
     showRotation: boolean;
+    mesh: any;
 
     constructor(planetMesh: any, showRotation = false) {
         this.planetPositionX = planetMesh.position.x;
@@ -15,5 +16,16 @@ export default class Rotation {
         this.z = 0.25;
         this.showRotation = showRotation;
     }
+
+    getMesh() {
+        if (this.mesh === undefined || this.mesh === null) {
+          const geometry = new THREE.BoxGeometry(this.planetPositionX, 0.25, 0.25);
+          const material = new THREE.MeshNormalMaterial();
+          this.mesh = new THREE.Mesh(geometry, material);
+          this.mesh.position.x = this.planetPositionX / 2;
+          this.mesh.visible = this.showRotation;
+        }
+        return this.mesh;
+      }
 }
 
