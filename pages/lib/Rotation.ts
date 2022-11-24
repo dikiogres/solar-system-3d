@@ -1,9 +1,6 @@
-import React from 'react'
+import * as THREE from "three";
 
-const Rotation = () => {
-  return (
-    Rotation
-  )
+export default class Rotation {
+
 }
 
-export default Rotation
