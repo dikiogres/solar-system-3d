@@ -1,10 +1,10 @@
 import * as THREE from "three";
 
 export default class Planet {
-    radius: number;
-    positionX: number;
-    textureFile: string;
-    mesh: any;
+    private radius: number;
+    private positionX: number;
+    private textureFile: string;
+    private mesh: any;
 
     constructor(radius:number, positionX:number, textureFile:string) {
         this.radius = radius;
