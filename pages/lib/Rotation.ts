@@ -14,6 +14,6 @@ export default class Rotation {
         this.y = 0.25;
         this.z = 0.25;
         this.showRotation = showRotation;
-      }
+    }
 }
 
