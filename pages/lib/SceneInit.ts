@@ -11,6 +11,8 @@ export default class SceneInit {
     public controls: any;
     public renderer:any = new THREE.WebGLRenderer;
 
+    onWindowResize: any;
+
 
     constructor(fov = 36, camera:any, scene:any, stats:number, controls:string, renderer:any) {
         this.fov = fov;
@@ -49,6 +51,8 @@ export default class SceneInit {
         this.stats = Stats();
         document.body.appendChild(this.stats.dom);
 
+        //if window resize
+        window.addEventListener("resize", () => this.onWindowResize(), false);
     }
 
 }
