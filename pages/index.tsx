@@ -44,6 +44,15 @@ export default function Home() {
     let earthSystem = new THREE.Group();
     earthSystem.add(earthMesh);
 
+    const mars = new Planet(3, 64, "mars.jpeg");
+    const marsMesh = mars.getMesh();
+    let marsSystem = new THREE.Group();
+    marsSystem.add(marsMesh);
+
+    solarSystem.add(mercurySystem, venusSystem, earthSystem, marsSystem);
+
+
+
   }, []);  
 
   return (
