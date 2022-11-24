@@ -39,6 +39,11 @@ export default function Home() {
     let venusSystem = new THREE.Group();
     venusSystem.add(venusMesh);
 
+    const earth = new Planet(4, 48, "earth.jpeg");
+    const earthMesh = earth.getMesh();
+    let earthSystem = new THREE.Group();
+    earthSystem.add(earthMesh);
+
   }, []);  
 
   return (
