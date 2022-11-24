@@ -7,7 +7,7 @@ import Rotation from "./lib/Rotation";
 
 export default function Home() {
 
-  let gui;
+  let gui: any;
 
   const initGui = async () => {
     const dat = await import("dat.gui");
@@ -63,6 +63,8 @@ export default function Home() {
     const marsRotation = new Rotation(marsMesh);
     const marsRotationMesh = marsRotation.getMesh();
     marsSystem.add(marsRotationMesh);
+
+    
 
   }, []);  
 

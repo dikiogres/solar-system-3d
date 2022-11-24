@@ -11,7 +11,7 @@ export default class SceneInit {
     public controls: any;
     public renderer:any = new THREE.WebGLRenderer;
 
-    constructor(fov = 36, camera:any, scene:any, stats:number, controls:string, renderer:any) {
+    constructor(fov:any = 36, camera?:any, scene?:any, stats?:number, controls?:string, renderer?:any) {
         this.fov = fov;
         this.scene = scene;
         this.stats = stats;
